@@ -1,0 +1,9 @@
+ls -Atp | grep -vE '^\.|/$' | paste -sd ',' -; ls -Atp | grep '/$' | paste -sd ','
+#Step-by-step breakdown:
+#ls -Atp
+#-A → List all except . and .. (ignores hidden files).
+#-t → Sort by access time (newest first).
+#-p → Append / to directories.
+#grep -vE '^\.|/$' → Filters out hidden files and directories.
+#paste -sd ',' - → Joins the output into a single line separated by commas.
+#ls -Atp | grep '/$' | paste -sd ',' - → Lists only directories and formats them similarly.
